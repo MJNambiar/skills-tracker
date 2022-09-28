@@ -7,29 +7,30 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 
-//NEED TO MAKE GIT REPO!!!!
-
 @Controller
 @ResponseBody
 public class SkillsController {
 
     @GetMapping("")
     public String skillsTracker(){
-        return "<html>" +
+        String html =
+//                "<html>" +
                 "<h1>Skills Tracker</h1>" +
                 "<h2>We have a few skills we would like to learn. Here is the list!</h2>" +
                 "<ol>" +
                 "<li>Java</li>" +
                 "<li>JavaScript</li>" +
                 "<li>Python</li>" +
-                "</ol>" +
-                "</html>";
+                "</ol>";
+//                "</html>";
+        return html;
     }
 
     @GetMapping("/form")
+    //@GetMapping(value = "form")
     public String form() {
         String html =
-                "<html>" +
+//                "<html>" +
                 "<body>" +
                     "<form method = 'post' action= '/form'>" +
                         "<label for = 'name'>Name: </label>" +
@@ -70,24 +71,28 @@ public class SkillsController {
 
                         "<input type = 'submit' value = 'Submit'>" +
                     "</form>" +
-                "</body>" +
-                "</html>";
+                "</body>";
+//                "</html>";
 
         return html;
     }
 
     @PostMapping("/form")
-    public String submit(@RequestParam String name, String language1, String language2, String language3) {
+    //@PostMapping(value = "form")
+    public String submit(@RequestParam String name,
+                         @RequestParam String language1,
+                         @RequestParam String language2,
+                         @RequestParam String language3) {
         String html =
-                "<html>" +
+//                "<html>" +
                     "<h1>"+ name + "</h1>" +
                     "<br>" +
                         "<ol>" +
                         "<li>" + language1 + "</li>" +
                         "<li>" + language2 + "</li>" +
                         "<li>" + language3 + "</li>" +
-                        "</ol>" +
-                "</html>";
+                        "</ol>";
+//                "</html>";
         return html;
     }
 
