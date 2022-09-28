@@ -31,7 +31,7 @@ public class SkillsController {
     public String form() {
         String html =
 //                "<html>" +
-                "<body>" +
+//                "<body>" +
                     "<form method = 'post' action= '/form'>" +
                         "<label for = 'name'>Name: </label>" +
                         "<br>" +
@@ -70,8 +70,8 @@ public class SkillsController {
                         "<br>" +
 
                         "<input type = 'submit' value = 'Submit'>" +
-                    "</form>" +
-                "</body>";
+                    "</form>";
+//                "</body>";
 //                "</html>";
 
         return html;
